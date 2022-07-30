@@ -1,35 +1,24 @@
-# Analytics Deployment App - Final Project
+# Instructions and Settings to Deploy Docker Container with Streamlit App.
 
-## Final Report:
+## Repository Contents:
+- Sanahuano_G folder contains a source code, HTML, and ipynb files with the Pyspark code used to perform computations on the data. 
+- The Analytics_Deployment_App folder contains all the files needed to run the Streamlit app on any browser through a Docker container.
+- The README file contains the project documentation and suggestions on how to successfully make the Streamlit app run through Docker.
 
-### Driving Needs
+## Intructions on how to run the Streamlit App on the browser:
+1. Fork this repository, and clone it into your computer.
+2. Make sure you have Docker installed and running on your computer.
+3. Make sure you have Docker added to your environmental variables and that you're able to run Docker commands on the terminal. Also, open up your Docker desktop app before you start with step 4.
+4. On your terminal, navigate to your repository folder, and then 'cd' to the Analytics_Deployment_App folder.
+5. I have created a docker-compose.yml file for an easier Docker deployment to your computer. Go ahead and run the following command <code>docker-compose up -d</code> from inside the Analytics_Deployment_App folder on your termimanl. That command will build a docker container with the streamlit app, and it will automatically execute the app in the container.
+6. Then go to your web browser and type <code>http://localhost:8501/</code> This will display our Streamlit app on the web browser.
 
-_Accomplishments:_
+### Additional Step:
+Sometimes the configurations on your computer won't be correctly set up, and you might run into some issues to execute the docker-compose.yml file. If that's the case, don't worry, there's an additional way to build the docker container and run it manually. Below are the instructions on how do it:
+1. Follow the all the previous steps until step 4 has been completed.
+2. Instead of following step 5, go ahead and run the following commands <code>docker build -f Dockerfile -t app:latest .</code> and then <code>docker run -p 8501:8501 app:latest</code> on your terminal and from inside the Analytics_Deployment_App folder. The first command builds a new container with the streamlit app in it, and the second one will run the docker container.
+3. As a final step, go to your web browser and type <code>http://localhost:8501/</code> This will display the Streamlit app on the web browser.
 
-1. I have used the Chipotle data provided during the last challenge, as well as, Pyspark/Databricks to build a dataset for my dashboard.
-2. I have provided a compelling story comparing same_day_brands and same_month_brands for Chipotle stores.      
-3. I built a dataset that is easy to use in Pandas in my app.   
-4. I displayed my final Pyspark code in one of the pages of my app and a description of the data format I used and why.      
-5. I displayed a table of SafeGraph data that includes:
-    - Filter option to see locations with more than X visits.   
-    - Displaying the following columns - `placekey, location_name, street_address, city, date_range_start, latitude, longitude, raw_visit_counts` and the brands columns.   
-6. I have provided multiple visualizations and tables to provide more insight about the analysis done to the brands columns. The following has been completed:
-    - A spatial map that displays insight about related brands.   
-    - Charts facilitating comparison of brands and insights about them.   
-7. I created an additional interactive element to allow the user to investigate the visualizations. An option to filter the dataset by state has been provided. As soon as the dataset is filtered by specific state, a spacial map will also be updated to display the Chipotle stores located at that state.
-8. An app built with streamlit has been created and incorporated in a Docker container, working as expected.
-9. My streamlit app container has been pushed and released to Heroku cloud and it's now accesible on a web browser.
-10. Assignment report file has been submitted on Canvas.
+**We have deployed our Streamlit app to Heroku for an easier access. If you want to check it, go ahead and visit the following URL:** <br>
 
-### Vocabulary/Lingo Challenge
-
-**1. Link to project repository:** https://github.com/Gabrielandres/DS460_app_challenge_sp22_Sanahuano <br>
-**2. Link to my published Heroku app:** https://polar-springs-15307.herokuapp.com/ <br>
-**3. Explain the added value of using DataBricks in your Data Science process (using text, diagrams, and/or tables).** <br>
-Databricks is an environment to build Data Science projects of large-scale. Specially, I learned a technology tool that allows me to discover more comfortably the Big Data Analysis world. The opportunity to learn in deep SQL functions to perform calculations and analysis on millions of records is of enormous scope. I am a Computer Scientist with a passion for programming, but throught this semester I developed an interest and love for the data analysis. I am sure I will keep learning more about this fascinating field along with Databricks and Pyspark, and I will look for more technologies that I still don't know about it. <br>
-**4. Compare and contrast PySpark to either Pandas or the Tidyverse (using text, diagrams, and/or tables).** <br>
-Pyspark is very similar to pandas from my perspective because they have same functionality, and in several ways they can do the same thing. There's a main difference though, Pyspark is much faster than pandas when it comes to handle massive amounts of records, this is what we called Big Data. In a world where we get millions of data records to be analysed by companies, we need the output and results as soon as possible because time is money. This is when we should prefer Pyspark over pandas, if handling Big Data. <br>
-**5. Explain Docker to somebody intelligent but not a tech person (using text, diagrams, and/or tables).** <br>
-Docker is a software that provides fast and easy deployment for all types of programs and apps. Docker provides you with a virtual container where you can store your files and additional software needed to make a program run. Once the container is built you can transfer it to any machine, regardless of their OS requirements, and run it to make a program work. If you needed to install an specific software to be able to run a program, you no longer need to install that specific software anymore because it's already stored in the Docker container, and once you run the docker container in another machine, automatically, will make whatever program is needed to work. <br>
-**6. Detail the difference between statistical regression and machine learning regression (compare and contrast).** <br>
-Machine Learning is about the accuracy you can make in your predictions, and statistics is more about finding the relationship that exists between variables.
+* https://polar-springs-15307.herokuapp.com/
