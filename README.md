@@ -22,3 +22,4 @@ Sometimes the configurations on your computer won't be correctly set up, and you
 **We have deployed our Streamlit app to Heroku for an easier access. If you want to check it, go ahead and visit the following URL:** <br>
 
 * https://polar-springs-15307.herokuapp.com/
+**Note: I am currently working with the Heroku Support team to restore the app access to the Heroku deployment service. As of November 28th, 2022, free Heroku plans are no longer available. The transition to Heroku paid plans has been made.
