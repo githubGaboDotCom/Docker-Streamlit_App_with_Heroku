@@ -18,8 +18,3 @@ Sometimes the configurations on your computer won't be correctly set up, and you
 1. Follow the all the previous steps until step 4 has been completed.
 2. Instead of following step 5, go ahead and run the following commands <code>docker build -f Dockerfile -t app:latest .</code> and then <code>docker run -p 8501:8501 app:latest</code> on your terminal and from inside the Analytics_Deployment_App folder. The first command builds a new container with the streamlit app in it, and the second one will run the docker container.
 3. As a final step, go to your web browser and type <code>http://localhost:8501/</code> This will display the Streamlit app on the web browser.
-
-**We have deployed our Streamlit app to Heroku for an easier access. If you want to check it, go ahead and visit the following URL:** <br>
-
-* https://polar-springs-15307.herokuapp.com/
-**Note: I am currently working with the Heroku Support team to restore the app access to the Heroku deployment service. As of November 28th, 2022, free Heroku plans are no longer available. The transition to Heroku paid plans has been made.
